@@ -8,10 +8,16 @@ body {
   background-color: gray;
 }
 
+.navbar {
+  height: 10vh;
+  width: 100%;
+  background-color: blue;
+}
+
 .messages {
   width: 100%;
   max-width: 800px;
-  height: 80vh;
+  height: 70vh;
   padding: 1em;
   box-sizing: border-box;
   background-color: white;
@@ -26,9 +32,17 @@ body {
     border-radius: 10px;
   }
 
+  .messages .theirs:first-letter, .messages .mine:first-letter {
+    text-transform: uppercase;
+  }
+
   .messages .theirs {
     margin: 1em auto 1em 0;
     background-color: #e7e7ff;
+  }
+
+  .messages .typing:after {
+    content: '…';
   }
 
   .messages .mine {
