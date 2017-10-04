@@ -1,12 +1,7 @@
-module.exports = {
-  setup: setup,
-  analyzer: analyzer
-}
+import copy2 from './lib/epxx/copy2.js';
+import pitchdetect from './lib/cwilso/pitchdetect.js';
 
-var copy2 = require('./lib/epxx/copy2.js');
-var pitchdetect = require('./lib/cwilso/pitchdetect.js');
-
-function setup() {
+export function setup() {
   pitchdetect.toggleLiveInput();
 }
 
@@ -14,7 +9,7 @@ function setup() {
 
 var last_tone = -1;
 
-function analyzer(tone) {
+export function analyzer(tone) {
   // We "lost the signal"
   if ( tone == -1 ) {
     sm(false);

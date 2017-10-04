@@ -152,7 +152,7 @@ function parse_morse(pause)
   }
 
   var c = "#";
-  for (k in morse.code_table()) {
+  for (var k in morse.code_table()) {
     if (morse.code_table()[k] === bits) {
       c = k;
       break;
