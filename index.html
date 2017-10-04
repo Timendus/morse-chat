@@ -5,7 +5,7 @@
     <title>MORSE BITCHES</title>
     <link rel="stylesheet" type="text/css" href="styling.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="morse.js" type="text/javascript"></script>
+    <script src="lib/epxx/morse.js" type="text/javascript"></script>
     <script src="binding.js" type="text/javascript"></script>
   </head>
 
@@ -16,7 +16,7 @@
         Listening for morse signals...
       </div>
       <div class="theirs">
-        Hello you!
+        Hello world!
       </div>
       <div class="mine">
         Hello to you too
@@ -27,6 +27,23 @@
       <textarea id="text-input"></textarea>
       <button id="send-button">Send</button>
     </div>
+
+    <button id="key">
+     Focus here and key using space bar or any number/letter
+    </button>
+    <span id="wpm">
+     Estimated speed
+    </span>
+    <br/>
+    <span id="text">
+    </span>
+    <br/>
+   </p>
+   <div id="itext">
+   </div>
+
+   <script src="lib/epxx/copy.js" type="text/javascript"></script>
+   <script src="lib/epxx/copy2.js" type="text/javascript"></script>
 
   </body>
 </html>
