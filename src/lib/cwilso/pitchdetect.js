@@ -1,3 +1,9 @@
+module.exports = {
+  toggleLiveInput: toggleLiveInput
+}
+
+var input = require('../../input.js');
+
 /*
 The MIT License (MIT)
 Copyright (c) 2014 Chris Wilson
@@ -20,7 +26,7 @@ SOFTWARE.
 
 window.AudioContext = window.AudioContext || window.webkitAudioContext;
 
-var audioContext = null;
+var audioContext = new AudioContext();;
 var isPlaying = false;
 var sourceNode = null;
 var analyser = null;
@@ -335,7 +341,7 @@ function updatePitch( time ) {
     waveCanvas.stroke();
   }
 
-  analyzer(ac);
+  input.analyzer(ac);
 
   // if (ac == -1) {
   //   detectorElem.className = "vague";

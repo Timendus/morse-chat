@@ -1,3 +1,12 @@
+module.exports = {
+  on_interpret: on_interpret,
+  off_interpret: off_interpret,
+  parse_morse: parse_morse
+}
+
+var chatroom = require('../../chatroom.js');
+var morse = require('./morse.js');
+
 // Taken from https://epxx.co/morse/copy.html
 
 // initial estimates
@@ -16,6 +25,14 @@ var dot_proportion_weight = 0.05;
 var dot_adj_weight = 0.1;
 var interdot_proportion_weight = 0.05;
 var interdot_adj_weight = 0.1;
+
+var keyelement;
+var text;
+var itext;
+var estimate;
+var bits = ""; // goes into text
+var parsed_morse = ""; // goes into itext
+var parsed_morse_ant = ""; // goes into itext (past sentences)
 
 function on_interpret(time)
 {
@@ -135,8 +152,8 @@ function parse_morse(pause)
   }
 
   var c = "#";
-  for (k in code) {
-    if (code[k] === bits) {
+  for (k in morse.code_table()) {
+    if (morse.code_table()[k] === bits) {
       c = k;
       break;
     }
@@ -144,18 +161,18 @@ function parse_morse(pause)
   parsed_morse += c;
   bits = "";
 
-  showCharacter(c.toLowerCase(), "theirs");
+  chatroom.showCharacter(c.toLowerCase(), "theirs");
 
   if (pause >= 2) {
     // inter-sentence
     parsed_morse_ant = parsed_morse + "<br>" + parsed_morse_ant;
     // showMessage(parsed_morse.toLowerCase(), "theirs");
-    closeMessage("theirs");
+    chatroom.closeMessage("theirs");
     parsed_morse = "";
   } else if (pause >= 1) {
     // inter-word
     parsed_morse += " ";
-    showCharacter(" ", "theirs");
+    chatroom.showCharacter(" ", "theirs");
   }
 
   // text.innerHTML = bits;

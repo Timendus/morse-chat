@@ -1,3 +1,16 @@
+module.exports = {
+  code_table: code_table,
+  setup: setup,
+  config: config,
+  encode_morse: encode_morse,
+  gen_timeline: gen_timeline,
+  start_schedule: start_schedule
+}
+
+function code_table() {
+  return code;
+}
+
 // Taken from https://epxx.co/morse/
 
 var audio_status = 0;
