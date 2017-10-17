@@ -10,7 +10,9 @@
   .theirs, .mine {
     position: relative;
     border: 0px;
-    width: 70%;
+    width: fit-content;
+    min-width: 15%;
+    max-width: 70%;
     padding: 1em;
     border-radius: 10px;
 
@@ -33,6 +35,11 @@
     margin: 1em 0 0 auto;
     background-color: #cdeccd;
 
+    &:before {
+      right: -5px;
+      border-right: 15px solid #cdeccd;
+    }
+
     + .mine {
       margin-top: 0.3em;
 
@@ -40,20 +47,23 @@
         display: none;
       }
     }
-
-    &:before {
-      right: -5px;
-      border-right: 15px solid #cdeccd;
-    }
   }
 
   .theirs {
-    margin: 1em auto 1em 0;
+    margin: 1em auto 0 0;
     background-color: #e7e7ff;
 
     &:before {
       left: -5px;
       border-bottom: 15px solid #e7e7ff;
+    }
+
+    + .theirs {
+      margin-top: 0.3em;
+
+      &:before {
+        display: none;
+      }
     }
   }
 
