@@ -1,0 +1,39 @@
+.messages {
+  padding: 1em;
+  box-sizing: border-box;
+  background-color: white;
+  overflow-y: scroll;
+
+  .theirs, .mine {
+    border: 0px;
+    width: 70vw;
+    max-width: 600px;
+    padding: 1em;
+    border-radius: 10px;
+
+    &:first-letter {
+      text-transform: uppercase;
+    }
+  }
+
+  .theirs {
+    margin: 1em auto 1em 0;
+    background-color: #e7e7ff;
+  }
+
+  .typing:after {
+    content: '…';
+  }
+
+  .mine {
+    margin: 1em 0 1em auto;
+    background-color: #cdeccd;
+  }
+
+  .notification {
+    margin: 0;
+    text-align: center;
+    font-size: 0.8em;
+    font-style: italic;
+  }
+}

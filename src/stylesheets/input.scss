@@ -1,0 +1,26 @@
+.input {
+  border-top: 1vh solid #bbb;
+  background-color: white;
+
+  textarea, button {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    box-sizing: border-box;
+    border: 0px;
+  }
+
+  textarea {
+    right: auto;
+    width: 80%;
+    font-size: 2em;
+  }
+
+  button {
+    left: auto;
+    width: 20%;
+    background-color: #e2e2e2;
+  }
+}

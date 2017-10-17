@@ -1,5 +1,5 @@
 // Load styling
-import './styling.scss';
+import './stylesheets/index.scss';
 
 // Load javascripts
 import * as chatroom from './chatroom.js';
