@@ -21,7 +21,7 @@ function storeMessage(message, owner) {
 
 export function renderLog() {
   log = JSON.parse(localStorage.getItem('morse_log')) || [];
-  log.forEach(entry => showMessage(entry.message, entry.owner));
+  log.forEach(entry => renderMessage(entry.message, entry.owner));
 }
 
 
