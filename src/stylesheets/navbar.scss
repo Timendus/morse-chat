@@ -1,5 +1,44 @@
 .navbar {
-  height: 10vh;
-  width: 100%;
-  background-color: blue;
+  display: flex;
+  background-color: white;
+
+  h1 {
+    font-size: 1.8em;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  // Wide display
+
+  @media (min-width: 769px) {
+    flex-direction: column;
+    align-items: stretch;
+
+    border-right: 1px solid #ddd;
+
+    h1 {
+      margin: 2em 10px;
+    }
+
+    button {
+      padding: 1em;
+      margin: 5px 10px;
+    }
+  }
+
+  // Narrow display
+
+  @media (max-width: 768px) {
+    flex-direction: row;
+    border-bottom: 1px solid #ddd;
+
+    h1, button {
+      flex-grow: 1;
+    }
+
+    button {
+      margin-left: 0;
+    }
+  }
 }

@@ -1,0 +1,41 @@
+.container {
+  display: grid;
+
+  // Wide display
+
+  grid-template-columns: 20vw 64vw 16vw;
+  grid-template-rows: calc(100vh - 40px) 40px;
+  grid-template-areas: "navbar chatroom chatroom"
+                       "navbar textinput send";
+
+  justify-content: center;
+
+  // Narrow display
+
+  @media (max-width: 768px) {
+    grid-template-columns: 80vw 20vw;
+    grid-template-rows: 40px calc(100vh - 80px) 40px;
+
+    grid-template-areas: "navbar navbar"
+                         "chatroom chatroom"
+                         "textinput send";
+  }
+
+  // Put things in their places
+
+  .navbar {
+    grid-area: navbar;
+  }
+
+  .messages {
+    grid-area: chatroom;
+  }
+
+  textarea {
+    grid-area: textinput;
+  }
+
+  button {
+    grid-area: send;
+  }
+}

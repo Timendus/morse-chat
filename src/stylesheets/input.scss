@@ -1,26 +1,23 @@
-.input {
-  border-top: 1vh solid #bbb;
-  background-color: white;
+textarea, button {
+  box-sizing: border-box;
+  border-radius: 5px;
+  margin: 5px;
+}
 
-  textarea, button {
-    position: absolute;
-    left: 0px;
-    right: 0px;
-    top: 0px;
-    bottom: 0px;
-    box-sizing: border-box;
-    border: 0px;
-  }
+textarea {
+  font-size: 20px;
+  margin-right: 0px;
+  border: 0px;
+}
 
-  textarea {
-    right: auto;
-    width: 80%;
-    font-size: 2em;
-  }
+button {
+  font-size: 1em;
+  background-color: #eee;
+  border: 1px solid #ddd;
+  cursor: pointer;
 
-  button {
-    left: auto;
-    width: 20%;
-    background-color: #e2e2e2;
+  &:hover {
+    border-color: #ccc;
+    background-color: #ddd;
   }
 }

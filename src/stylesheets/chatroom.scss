@@ -1,33 +1,64 @@
 .messages {
-  padding: 1em;
+  width: 100%;
   box-sizing: border-box;
+
+  padding: 1em 1.5em;
   background-color: white;
   overflow-y: scroll;
+  border-bottom: 1px solid #ddd;
 
   .theirs, .mine {
+    position: relative;
     border: 0px;
-    width: 70vw;
-    max-width: 600px;
+    width: 70%;
     padding: 1em;
     border-radius: 10px;
 
     &:first-letter {
       text-transform: uppercase;
     }
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: -15px;
+      height: 0;
+      width: 0;
+      border: 15px solid transparent;
+      transform: rotateZ(45deg);
+    }
+  }
+
+  .mine {
+    margin: 1em 0 0 auto;
+    background-color: #cdeccd;
+
+    + .mine {
+      margin-top: 0.3em;
+
+      &:before {
+        display: none;
+      }
+    }
+
+    &:before {
+      right: -5px;
+      border-right: 15px solid #cdeccd;
+    }
   }
 
   .theirs {
     margin: 1em auto 1em 0;
     background-color: #e7e7ff;
+
+    &:before {
+      left: -5px;
+      border-bottom: 15px solid #e7e7ff;
+    }
   }
 
   .typing:after {
     content: '…';
-  }
-
-  .mine {
-    margin: 1em 0 1em auto;
-    background-color: #cdeccd;
   }
 
   .notification {
