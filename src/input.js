@@ -3,6 +3,7 @@ import pitchdetect from './lib/cwilso/pitchdetect.js';
 
 export function setup() {
   pitchdetect.toggleLiveInput();
+  return true;
 }
 
 // Connect pitchdetect to copy2

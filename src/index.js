@@ -10,7 +10,7 @@ import * as input from './input.js';
 window.addEventListener('load', function() {
   output.setup();
   chatroom.renderLog();
-  input.setup();
+  input.setup() && chatroom.showFlashMessage("Listening for morse signals...", "info");
 
   document.getElementById("text-input").addEventListener("keyup", e => {if (e.keyCode == 13) output.sendMessage()});
   document.getElementById("send-button").addEventListener("click", output.sendMessage);

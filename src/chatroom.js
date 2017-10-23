@@ -35,12 +35,16 @@ function renderMessage(message, owner) {
   messageNode.className = owner;
   messageNode.innerText = message;
   document.getElementById("messages").appendChild(messageNode);
-  document.getElementById("messages").scrollTop = 100000;
+  scrollDown();
 }
 
 function newestMessage(owner) {
   var theirMessages = document.getElementsByClassName(owner);
   return theirMessages[theirMessages.length-1]
+}
+
+function scrollDown() {
+  document.getElementById("messages").scrollTop = 100000;
 }
 
 
@@ -64,7 +68,19 @@ export function clearMessages() {
   log = [];
   // Clean up DOM
   var messages = document.getElementById("messages");
-  while ( messages.children.length > 1 ) {
-    messages.removeChild(messages.lastChild);
-  }
+  Array.from(messages.children).forEach(child => {
+    if (!child.classList.contains('flash')) {
+      messages.removeChild(child)
+    }
+  });
+}
+
+
+export function showFlashMessage(message, level='') {
+  var flashNode = document.createElement("div");
+  flashNode.className = "flash " + level;
+  flashNode.innerText = message;
+  document.getElementById("messages").appendChild(flashNode);
+  scrollDown();
+  return flashNode;
 }
